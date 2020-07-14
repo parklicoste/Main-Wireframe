@@ -91,6 +91,54 @@ Vue.use(VueRouter)
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import( '../views/Session.vue')
+  },
+  {
+    path: '/upload/game',
+    name: 'Game',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import( '../views/Upload.vue')
+   },
+  {
+    path: '/upload/media',
+    name: 'Upload-Media',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import( '../views/UploadMedia.vue')
+  },
+  {
+    path: '/upload/browser',
+    name: 'Browser',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import( '../views/UploadBrowser.vue')
+  },
+  {
+    path: '/upload/idleMedia',
+    name: 'Idle-Media',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import( '../views/UploadIdleMedia.vue')
+  },
+  {
+    path: '/upload/birdAnimation',
+    name: 'Bird-Animation',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import( '../views/UploadBirdAnimation.vue')
+  },
+  {
+    path: '/upload/backgroundImage',
+    name: 'Backgroung-Image',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import( '../views/UploadBackgroundImage.vue')
   }
 ]
 

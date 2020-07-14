@@ -8,79 +8,30 @@
                         Dashboard <span class="sr-only">(current)</span>
                         </router-link>
                     </li>
-                  <ul class="nav flex-column" v-for="(x, i) in navLinks" :key="i">
-                    <h5 class="navbar-nav px-3 mt-3">{{x.type}}</h5>
-                    <li class="nav-item" 
-                    v-for="(link, index) in x.nav" :key="index" >
-                      <router-link class="nav-link" :to="link.path" >
-                        <span :data-feather="link.icon"></span>
-                          {{link.text}}
+                    <ul class="nav flex-column" v-for="(x, i) in navLinks" :key="i">
+                      <h5 class="navbar-nav px-3 mt-3">{{x.type}}</h5>
+                      <li class="nav-item" 
+                      v-for="(link, index) in x.nav" :key="index" >
+                        <router-link class="nav-link" :to="link.path" >
+                          <span :data-feather="link.icon"></span>
+                            {{link.text}}
+                        </router-link>
+                      </li>
+                    </ul>
+                    <li class="nav-item">
+                      <!-- <button type="button" class="btn btn-link" style="color: #000; font-size: 1.25rem; font-weight: 500; ">Upload Content</button> -->
+                      <!-- <Upload /> -->
+                      <router-link class="btn btn-link" :to="'/upload'" style="color: #000; font-size: 1.25rem; font-weight: 500; ">
+                        Upload Content
                       </router-link>
                     </li>
+                    <li class="nav-item">
+                      <!-- <button type="button" class="btn btn-link" style="color: #000; font-size: 1.25rem; font-weight: 500; ">Media</button> -->
+                        <router-link class="btn btn-link" :to="'/media'" style="color: #000; font-size: 1.25rem; font-weight: 500; ">
+                        Media
+                        </router-link>
+                    </li>
                   </ul>
-                  <!-- <h5 class="navbar-nav px-3 mt-3">Select device</h5>
-                  <li class="nav-item" 
-                    v-for="(link, index) in nav" :key="index" >
-                      <router-link class="nav-link" :to="link.path" >
-                        <span :data-feather="link.icon"></span>
-                          {{link.text}}
-                      </router-link>
-                  </li> -->
-                  <li class="nav-item">
-                      <router-link class="nav-link" :to="'/upload'">
-                      Upload Content
-                      </router-link>
-                  </li>
-                  <li class="nav-item">
-                      <router-link class="nav-link" :to="'/media'">
-                      Media
-                      </router-link>
-                  </li>
-
-                  <!-- <h5 class="navbar-nav px-3 mb-2">Administration</h5>
-                  <li class="nav-item" administratorArray=navLinks.slice(devices.length, devices.length + administrators.length)
-                    v-for="(links, counter) in administratorArray" :key="counter" >
-                      <router-link class="nav-link" :to="links.path" >
-                        <span :data-feather="links.icon"></span>
-                          {{links.text}}
-                      </router-link>
-                  </li> -->
-
-                  <!-- <li class="nav-item">
-                      <a class="nav-link" href="#">
-                      <span data-feather="user"></span>
-                      users
-                      </a>
-                  </li>
-
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">
-                      <span data-feather="users"></span>
-                      users-Group
-                      </a>
-                  </li>
-
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">
-                      <span data-feather="settings"></span>
-                      Settings
-                      </a>
-                  </li> -->
-
-                  <!-- <h5 class="navbar-nav px-3 mb-2">Advance</h5>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span data-feather="alert-triangle"></span>
-                        Report Faults
-                    </a>
-                </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="file-text"></span>
-                    Session
-                </a>
-              </li> -->
-            </ul>
         </div>
     </nav>
 </template>
@@ -189,6 +140,7 @@
 
 <script>
 import feather from 'feather-icons'
+// import Upload from '../views/Upload'
 
   export default {
       name: 'nav-bar',
@@ -197,13 +149,13 @@ import feather from 'feather-icons'
       feather.replace()
       },
       components: {
+        // Upload
       },
       data () {
           return {
             devices: ['main', 'test'],
-            administrators: ['users', 'users-groups', 'settings'],
-            devicesArray: [],
-            administratorArray: []
+            administrators: ['users', 'users-groups', 'settings']
+            
           }
       },
       method: {

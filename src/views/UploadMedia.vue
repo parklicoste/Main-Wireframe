@@ -13,6 +13,7 @@
         <div class="row align-items-center">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <ul class="navbar-nav">
+
                         <li class="nav-item" v-for="(link, index) in uploadLinks" :key="index">
                             <router-link class="nav-link" :to="link.path">{{link.text}}</router-link>
                         </li>
@@ -47,11 +48,25 @@
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Activity File</span>
+                        <span class="input-group-text">Media File</span>
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="inputGroupFile01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Name" class="col-sm-2 col-form-label">resolution</label>
+                    <div>
+                        <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
+                            <b-dropdown-item>First Action</b-dropdown-item>
+                            <b-dropdown-item>Second Action</b-dropdown-item>
+                            <b-dropdown-item>Third Action</b-dropdown-item>
+                            <b-dropdown-divider></b-dropdown-divider>
+                            <b-dropdown-item active>Active action</b-dropdown-item>
+                            <b-dropdown-item disabled>Disabled action</b-dropdown-item>
+                        </b-dropdown>
                     </div>
                 </div>
 
@@ -92,9 +107,10 @@
                     </div>
                     
                 </div>
+                
         </div>
-            <button type="button" class="btn btn-primary btn-lg mt-3" style="margin-left: 30%;">Submit</button>
-
+        <button type="button" class="btn btn-primary btn-lg mt-3" style="margin-left: 30%;">Submit</button>
+           
     </main>
 
 </template>

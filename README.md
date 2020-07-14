@@ -4,8 +4,7 @@
 ```
 npm install
 ```
-npm install --save feathers-icons
-```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
