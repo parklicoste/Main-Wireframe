@@ -44,3 +44,11 @@
             </table>
     </main>
 </template>
+
+<script>
+    import MY_JSON from '../../files/text.json'
+    export default{
+        //custom option named myJson
+         myJson: MY_JSON
+    }
+</script>

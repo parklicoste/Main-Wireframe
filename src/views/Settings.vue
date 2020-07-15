@@ -4,25 +4,14 @@
             <h5 >Settings</h5>
         </div>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
                 <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Content <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">General</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Troubleshooting</a>
-                </li>
+                    <li class="nav-item" v-for="(link, index) in settingsLinks" :key="index">
+                        <router-link class="nav-link" active-class="active" :to="link.path">{{link.text}}</router-link>
+                    </li>
                 </ul>
-            </div>
             </nav>
-        
+            <router-view></router-view>
     </main>
 </template>
 
@@ -35,3 +24,23 @@ h5 {
     margin-top: 7px;
 }
 </style>
+
+<script>
+export default {
+    data: () => {
+        return {
+            settingsLinks: [
+                {   text: 'Content',
+                    path: '/settings/content',
+                },
+                {   text: 'General',
+                    path: '/settings/general',
+                },
+                {   text: 'Troubleshooting',
+                    path: '/settings/troubleshooting',
+                }
+            ]
+        }
+    }
+}
+</script>

@@ -1,27 +1,6 @@
-<style>
-  [v-cloak] {
-    display: none;
-  }
-</style>
-
 <template>
-   <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 main" >
-       <div class="row mt-3 pb-3">
-            <h1 class="h2"> Upload Content</h1>
-        </div>
-        
-        <div class="row align-items-center">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <ul class="navbar-nav">
-
-                        <li class="nav-item" v-for="(link, index) in uploadLinks" :key="index">
-                            <router-link class="nav-link" :to="link.path">{{link.text}}</router-link>
-                        </li>
-                    </ul>
-                </nav>
-        </div>
-        <div class="col col-lg-8">
-            <h5 class="row mt-3 mb-3">New Activity</h5>
+    <div class="col col-lg-8" >
+        <h5 class="row mt-3 mb-3">New Activity</h5>
                 <form>
                     <div class="form-group row">
                         <label for="Name" class="col-sm-2 col-form-label">Name</label>
@@ -48,25 +27,11 @@
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Media File</span>
+                        <span class="input-group-text">Activity File</span>
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="inputGroupFile01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="Name" class="col-sm-2 col-form-label">resolution</label>
-                    <div>
-                        <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
-                            <b-dropdown-item>First Action</b-dropdown-item>
-                            <b-dropdown-item>Second Action</b-dropdown-item>
-                            <b-dropdown-item>Third Action</b-dropdown-item>
-                            <b-dropdown-divider></b-dropdown-divider>
-                            <b-dropdown-item active>Active action</b-dropdown-item>
-                            <b-dropdown-item disabled>Disabled action</b-dropdown-item>
-                        </b-dropdown>
                     </div>
                 </div>
 
@@ -107,49 +72,6 @@
                     </div>
                     
                 </div>
-                
-        </div>
-        <button type="button" class="btn btn-primary btn-lg mt-3" style="margin-left: 30%;">Submit</button>
-           
-    </main>
-
+            <button type="button" class="btn btn-primary btn-lg mt-3" style="margin-left: 30%;"> Submit</button>
+    </div>
 </template>
-
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1 {
-  padding-left: 50px;
-  vertical-align: middle;
-}
-
-</style>
-
-<script>
-export default {
-    data: () => {
-        return {
-        uploadLinks: [
-              { text: 'Game',
-                path: '/upload/game'
-            },
-            { text: 'Media',
-              path: '/upload/media'
-              },
-            { text: 'Browser',
-              path: '/upload/browser'
-              },
-            { text: 'Idle Media',
-              path: '/upload/idleMedia'
-              },
-            { text: 'Bird Animation',
-              path: '/upload/birdAnimation'
-              },
-            { text: 'Background Image',
-              path: '/upload/backgroundImage'
-              }
-            ]
-        }
-    }
-}
-</script>
