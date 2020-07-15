@@ -3,6 +3,8 @@
 ## Project setup
 ```
 npm install
+npm install --save feathers-icons
+npm install bootstrap-vue
 ```
 
 ### Compiles and hot-reloads for development
